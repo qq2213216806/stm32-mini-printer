@@ -1,0 +1,23 @@
+{
+    "files.associations": {
+        "led.h": "c",
+        "serial.h": "c",
+        "usart.h": "c",
+        "key.h": "c",
+        "power.h": "c",
+        "stm32f1xx_hal.h": "c",
+        "adc.h": "c",
+        "ble.h": "c",
+        "freertos.h": "c",
+        "stdio.h": "c",
+        "temp.h": "c",
+        "em_adc.h": "c",
+        "motor.h": "c",
+        "driver_timer.h": "c",
+        "pinter.h": "c",
+        "printer.h": "c",
+        "task.h": "c",
+        "mytask.h": "c",
+        "cmsis_os.h": "c"
+    }
+}
