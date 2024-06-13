@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--当按钮被点击时定义显示的图片-->
+    <item
+        android:state_pressed = "true"
+        android:drawable = "@drawable/button_click"/>
+
+    <!--默认按钮没有被选中时显示的图片-->
+    <item android:drawable = "@drawable/button" />
+</selector>

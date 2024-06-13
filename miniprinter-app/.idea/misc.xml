@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/drawable/above_shadow.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/drawable/below_shadow.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/drawable/rounded_border_text_view.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/activity_main.xml" value="0.2558876811594203" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/activity_photo_editor.xml" value="0.25" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/activity_printer.xml" value="0.18" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/add_text_popup_window.xml" value="0.14375" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/color_picker_item_list.xml" value="0.14375" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/device_list_item.xml" value="0.2558876811594203" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/fragment_main_photo_edit_emoji.xml" value="0.2558876811594203" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/fragment_main_photo_edit_image.xml" value="0.2558876811594203" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/fragment_photo_edit_emoji_item_list.xml" value="0.2558876811594203" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/app/src/main/res/layout/fragment_photo_edit_image_item_list.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/photoeditorsdk/src/main/res/layout/photo_editor_sdk_image_item_list.xml" value="0.12916666666666668" />
+        <entry key="..\:/work/document/PX30/HalfWireless/miniprinter/photoeditorsdk/src/main/res/layout/photo_editor_sdk_text_item_list.xml" value="0.12916666666666668" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/drawable/above_shadow.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/drawable/rounded_border_text_view.xml" value="0.1855" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/font/roboto_medium.xml" value="0.20729166666666668" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/activity_edit_image.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/activity_main.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/activity_printer.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/add_text_dialog.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/color_picker_item_list.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/device_list_item.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/fragment_bottom_custom_effect_dialog.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/fragment_bottom_properties_dialog.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/fragment_bottom_shapes_dialog.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/fragment_bottom_sticker_emoji_dialog.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/row_editing_tools.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/row_emoji.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/row_filter_view.xml" value="0.17708333333333334" />
+        <entry key="..\:/work/document/PX30/miniprinter/app/src/main/res/layout/row_sticker.xml" value="0.17708333333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
