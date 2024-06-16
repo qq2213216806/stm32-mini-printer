@@ -51,12 +51,15 @@ QT 程序
 不过注意，那两个图片预览，并不是用Qlabel控件而用QGraphicsView,这样可以保持预览图片的框大小不变，还能完整的预览整个图片。
 
 重点讲下图片数据处理部分：btn_Browse_clicked 和 btn_star_print_clicked() 大部分处理都在这两个函数里
+
 具体原理：
+
 利用opencv库对图片数据进行处理:读取原图，对原图片的大小修改为(384*xxx)，对修改后的图片进行二值化。
 二值化后的图片每行是384个字节，而打印机一行是48个字节，所以需要384字节 压缩成 48字节后，再发送。
+
 注：数据的发送是用QTimer来一行一行的转发的（不能直接全部数据一下子全发出去，这样做只能发4096个字节）
-1.imread() 函数 读取原图
-、、、
+
+### 1.imread() 函数 读取原图
     /*读取原图*/
     // srcImag = cv::imread(fileName.toUtf8().data()); //不用这个是为了支持中文路径
     QFile file(fileName);
@@ -67,19 +70,16 @@ QT 程序
         srcImag = cv::imdecode(cv::Mat(data), CV_LOAD_IMAGE_COLOR); //等同于cv::IMREAD_COLOR,Return a 3-channel color image
         file.close();
     }
-、、、
+    
 
-2.resize() 函数 修改图片大小，打印机支持打印图片的宽大小为384，高不限,所以需要修改为 384*xxx
-、、、
+### 2.resize() 函数 修改图片大小，打印机支持打印图片的宽大小为384，高不限,所以需要修改为 384*xxx
     double src_width = srcImag.cols;
     double src_hight = srcImag.rows;
     int dim_width = 384;
     int dim_hight = 384.0 /src_width * src_hight;  //保持图片原宽高比
     cv::resize(srcImag,srcImag,cv::Size(dim_width,dim_hight),0,0, CV_INTER_LINEAR);
-、、、
 
-3.二值化处理
-、、、
+### 3.二值化处理
 void MainWindow::ImageBinarization(cv::InputArray src, cv::OutputArray dst,int threshold)
 {
     cv::Mat tmpImage;
@@ -88,10 +88,8 @@ void MainWindow::ImageBinarization(cv::InputArray src, cv::OutputArray dst,int t
     //二值化
     cv::threshold(tmpImage,dst,threshold,255,cv::THRESH_BINARY);    //threshold 是那个阈值滑动条的值
 }
-、、、
 
-4.384字节压缩成48字节
-、、、
+### 4.384字节压缩成48字节
     //因为二值化后图片数据不是255(白)就是0(黑)，所以我们可以将每8个字节合并成一个字节
     for (int j=7;j >= 0;j--)
     {
