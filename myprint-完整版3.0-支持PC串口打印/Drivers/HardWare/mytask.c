@@ -113,13 +113,14 @@ void task_printer(void *Parame)
                     clean_blepack_count();
                     clean_serialpack_count();
                     printer_stop();
-                   // motor_run_step(140);
+                    motor_run_step(140);
                     motor_stop();
                     printf("打印结束!\n");
                     break;
                 }
             }else
             {  
+                //打印机异常
                 printer_stop();
                 motor_stop();
                 if (error == 1 && cnt == 0)
@@ -173,7 +174,7 @@ void task_dev_check(void *Parame)
 {   uint8_t cnt = 0;
     while (1)
     {
-        error_check();
+        error_check(); //检测是否有错误
 
         uint8_t state[4];
         state[0] = dev.power;
@@ -202,9 +203,10 @@ void task_dev_check(void *Parame)
         //通过蓝牙发送数据，,打印开始禁止通过上报数据 
         if(dev.printer_state == 0)
         { 
-            //ble_report(state,4);
+            ble_report(state,4);
+            serial_report(state,4);
         }
-       // ble_status_data_clean(); // 该函数必须周期性调用，目的过滤连接状态，清空缓存区
+        ble_status_data_clean(); // 该函数必须周期性调用，目的过滤连接状态，清空缓存区
         vTaskDelay(100);
     }
 }

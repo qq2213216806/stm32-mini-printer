@@ -45,6 +45,7 @@ private:
     QFormLayout *formLayout1; //表格布局
     QLabel *label_state; //文字标签:打印机状态
     QLabel *dev_state[4];
+    uint8_t dev_error;
     QFormLayout *formLayout2; //表格布局
     QVBoxLayout *s_vBoxLayout; //串口区域垂直布局
     QSpacerItem *vSpacer1;

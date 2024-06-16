@@ -6,6 +6,8 @@
 #include "string.h"
 #include "mytask.h"
 
+extern UART_HandleTypeDef huart1;
+
 int serial_cmd_index = 0;
 uint8_t serial_cmd_buffer[100];
 uint8_t serial_Start_flag = 0; //用于指示打印是否已经开始,屏蔽重复开始信号  1：已经开始 0：没有开始
@@ -58,4 +60,18 @@ void clean_serialpack_count()
 {
   serial_Start_flag = 0;
   serial_packcount = 0;
+}
+
+void serial_report(uint8_t *data,uint8_t len)
+{
+  uint8_t report[4+len]; // 前4位用于上报标志位，告知gui是设备状态数据
+  for (uint8_t i = 0; i < 4; i++)
+  {
+     report[i] = 0xA8;
+  }
+  for (uint8_t i = 0; i < len; i++)
+  {
+    report[i+4] = data[i];
+  }
+  HAL_UART_Transmit(&huart1,report,len+4,HAL_MAX_DELAY);
 }

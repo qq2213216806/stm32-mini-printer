@@ -292,6 +292,36 @@ void MainWindow::serialPortReadyRead()
 {
     /* 接收缓冲区中读取数据 */
     QByteArray buf = serialPort->readAll();
+    uint8_t *data =(uint8_t *)buf.data();
+    if(data[0] == 0xA8 && data[1] == 0xA8 && data[2] == 0xA8 && data[3] == 0xA8 )
+    {
+        dev_state[0]->setText(QString::number(data[4]) + "%");
+        dev_state[1]->setText(QString::number(data[5]) + "℃");
+
+        if(data[6] == 1)
+        {
+            dev_state[2]->setText("缺纸");
+        }else
+        {
+             dev_state[2]->setText("不缺纸");
+        }
+        if(data[7] == 0)
+        {
+            dev_state[3]->setText("空闲");
+        }else
+        {
+            dev_state[3]->setText("打印中");
+        }
+        dev_error = 0;
+        if(data[6] == 1 )
+        {
+            dev_error = 1; //缺纸错误
+        }else if(data[5] > 60)
+        {
+            dev_error = 2;//温度过高错误
+        }
+    }
+
 }
 void MainWindow::timer1timeout()
 {
@@ -310,10 +340,17 @@ void MainWindow::timer1timeout()
 
 void MainWindow::timer2timeout()
 {
-    if(send_finish_count >= send_conut)
+    if(send_finish_count >= send_conut || dev_error > 0)
     {
         //停止发送
         end_send();
+        if(dev_error == 1)
+        {
+            QMessageBox::warning(this,tr("警告"),tr("打印异常停止:打印机缺纸！"));
+        }else if(dev_error == 2)
+        {
+           QMessageBox::warning(this,tr("警告"),tr("打印异常停止:打印机温度过高！"));
+        }
     }else
     {
         serialPort->write((char*)(send_data_buffer+send_finish_count),48);
@@ -457,7 +494,13 @@ void MainWindow::btn_star_print_clicked()
         }
 
         //串口发送数据 开始打印
-        start_send();
+        if(dev_state[3]->text() =="空闲")
+        {
+            start_send();
+        }else
+        {
+            QMessageBox::warning(this,tr("警告"),tr("设备打印中，请等待设备空闲"));
+        }
      }else
     {
       end_send();
